@@ -1,0 +1,323 @@
+
+
+.body-style {
+  background-color: $color-alt;
+}
+
+.slide {
+  background-color: #e3e3e3;
+  padding: $spacing-medium;
+  margin-bottom: 2rem;
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+.about-slide {
+  padding-top: $spacing-large;
+  padding-bottom: $spacing-medium;
+  margin-bottom: $spacing-large;
+  border-bottom: 1px solid #e3e3e3;
+
+  @include breakpoint($break-lg) {
+    font-size: 1.1rem;
+  }
+}
+
+
+
+// Top header / navigation / menu
+
+// header block
+.site-header {
+  background-color: $color-background;
+}
+
+.top-title {
+  text-align: center;
+  padding: 2rem 0 2rem;
+}
+
+.title-wrap a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.top-nav {
+  ul, li {
+    margin-bottom: 0;
+  }
+}
+
+.top-nav a {
+  color: white;
+}
+
+@supports (display: grid) {
+  @include breakpoint($break-lg) {
+  .top-title {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    text-align: right;
+    }
+  }
+}
+
+.top-menu {
+  text-align: center;
+  margin-bottom: $spacing-medium;
+  li {
+    margin-bottom: 0;
+  }
+  @include breakpoint($break-lg) {
+    text-align: right;
+  }
+}
+
+.top-menu > li {
+  display: inline-block;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+// Footer
+
+// Footer menu
+.menu {
+  margin-bottom: $spacing-small;
+
+  li {
+    display: inline-block;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-bottom: 0;
+  }
+}
+
+.footer {
+  // background-color: #f9f9f9;
+  background: #e3e3e3;
+  margin-top: 2rem;
+  padding: $spacing-medium 0 $spacing-medium;
+  p, li {
+    font-size: $font-size-small;
+  }
+}
+
+.footer-inner {
+  padding-top: $spacing-medium;
+}
+
+// Content styles
+.list {
+  @include breakpoint(20em) {
+    column-count: 2;
+    column-gap: $spacing-small;
+  }
+
+  @include breakpoint($break-lg) {
+    column-count: 3;
+  }
+}
+
+blockquote {
+  max-width: 35em;
+  border-bottom: 1px solid #e3e3e3;
+  margin: 0 auto 2rem;
+}
+
+blockquote::before {
+  content: "“";
+  font-size: 8rem;
+  color: #838383;
+  line-height: 1;
+  vertical-align: top;
+  float: left;
+  padding-right: $spacing-medium;
+}
+
+// grid
+.wrapper-header {
+  display: block;
+
+	@include breakpoint(46em) {
+		// display: grid;
+	}
+}
+
+
+// main content
+
+.content-main {
+  padding-top: 2rem;
+}
+
+.content-main, .sidebar {
+  h1, h2, h3, h4, h5, h6 {
+    color: #1024be;
+  }
+}
+
+// Homepage
+
+
+// introduction slide
+.home-intro {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-medium;
+  text-align: center;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  color: white;
+  // border: 1rem solid #e3e3e3; // 1024be
+  background: url(../img/mountain-view.jpg) no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  margin-top: 2rem;
+  p {
+  font-size: 1.2rem;
+  }
+}
+
+.intro-text {
+  line-height: 1.5;
+}
+
+.intro-emphasis {
+  font-style: italic;
+}
+
+p.final-line {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+
+// internal wrapper for body elements
+// fallbacks for no grid:
+.wrapper {
+  padding-right: $spacing-small;
+  padding-left: $spacing-small;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@include supports-grid() {
+
+	// single column grid
+	// come back to this to set breakpoints
+	.wrapper {
+  	display: grid;
+  	grid-template-columns: minmax($spacing-small, auto) minmax(auto, 50em) minmax($spacing-small, auto);
+  	/* Set natural heights with the grid sticky footer */
+    // or is this align-items actually
+  	align-content: start;
+
+    // remove fallbacks:
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 0;
+    margin-right: 0;
+	}
+
+	/* Start content on the center column */
+	.wrapper > * {
+  grid-column-start: 2;
+	}
+
+	.content-columns {
+		display: block;
+		grid-gap: $spacing-medium;
+		grid-template-columns: 3fr 1fr; // or something
+
+		// switch to grid multi-column layout at the breakpoint
+		@include breakpoint($break-lg) {
+			display: grid;
+		}
+	}
+
+	.content-main {
+	  grid-column-start: 1;
+	}
+
+	.content-sidebar {
+	  grid-column-start: 2;
+	}
+
+  .row {
+    margin-bottom: $spacing-medium;
+  }
+
+  @include breakpoint($break-lg) {
+
+   // two column
+    .row {
+      display: grid;
+      grid-gap: $spacing-small;
+    }
+
+    .row-wider {
+      display: grid;
+      grid-gap: $spacing-large;
+    }
+
+    .row-columns-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .row-center {
+      justify-items: center;
+    }
+
+    aside {
+      border-left: 1px #e3e3e3 solid;
+      padding-left: $spacing-medium;
+    }
+
+} // end breakpoint
+
+} // end @supports
+
+.sidebar {
+  border-top: 1px #e3e3e3 solid;
+  padding-top: $spacing-large;
+
+  @include breakpoint($break-lg) {
+    border-top: 0;
+    padding-top: 2rem;
+    font-size: $font-size-small;
+    p, h3 {
+    font-size: $font-size-small;
+    }
+  }
+}
+
+
+// responsive YouTube videos
+
+// Within a CSS grid column, the responsive div container itself needs to be given another wrapper element to fill for the width/height ratio to work properly
+.video-container-wrapper {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  iframe, object, embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

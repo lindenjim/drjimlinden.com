@@ -1,0 +1,19 @@
+// Web Fonts
+
+@font-face {
+  // webfont() parameters: style, weight, font: $font-web-main, -alt or -mono, display
+  // Do nothing for the standard web font from settings
+  @include webfont($weight: 400);
+  src:
+    local('Libre Franklin'), local('LibreFranklin-Regular'),
+    url(fonts/LibreFranklin-Regular.woff2) format('woff2'),
+    url(fonts/LibreFranklin-Regular.woff) format('woff');
+}
+
+@font-face {
+  @include webfont($weight: 700);
+  src:
+      local('Libre Franklin'), local('LibreFranklin-Bold'),
+      url(fonts/LibreFranklin-Bold.woff2) format('woff2'),
+      url(fonts/LibreFranklin-Bold.woff) format('woff');
+}

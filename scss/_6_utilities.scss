@@ -1,0 +1,77 @@
+
+// site title
+
+h1.title {
+  margin-bottom: 0;
+}
+
+.title {
+  font-size: $h2;
+  line-height: $line-height-alt;
+  font-weight: 700;
+  color: #fff;
+
+  @include breakpoint($break-md) {
+    font-size: $h3;
+  }
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+// about photo
+.portrait {
+
+  // 640px and full width until breakpoint, then shrink and float
+  @include breakpoint($break-md) {
+    width: 400px;
+    float: left;
+    padding-right: $spacing-medium;
+  }
+
+  @include breakpoint($break-lg) {
+    margin-right: 2rem;
+  }
+}
+
+// extra?
+.text-align {
+  text-align: center;
+}
+
+.list > li::before {
+  content: "• ";
+}
+
+// self-clear floats within elements - apply to parent
+.clear-children:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+// Hide skiplinks
+// https://hugogiraudel.com/2016/10/13/css-hide-and-seek/
+.screen-reader-only {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px); // fallback, deprecated
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%); // clip replacement
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+
+  &:focus,
+  &:active {
+    clip: auto; // fallback, deprecated
+    -webkit-clip-path: none;
+    clip-path: none; // clip replacement
+    height: auto;
+    overflow: visible;
+    width: auto;
+    white-space: normal;
+  }
+}

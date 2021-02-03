@@ -1,0 +1,65 @@
+/* _settings.scss */
+
+/* ==========================================================================
+   Type Scale and sizes
+*/
+
+$font-size: 1rem;
+$ratio: 1.2;
+
+/* Line height */
+$line-height-main: 1.5;
+$line-height-alt: 1;
+
+/* Create Sass type sizes for main ratio */
+
+// Multiply by the ratio twice to skip steps
+
+$font-size-small: $font-size / $ratio; // captions
+$h4: $font-size * $ratio;
+$h3: $h4 * $ratio;
+$h2: $h3 * $ratio;
+$h1: $h2 * $ratio;
+
+/* Spacing - margin, padding, grid gaps */
+$spacing-smaller: .5rem;
+$spacing-small: .5rem * $line-height-main;
+$spacing-medium: 1rem;
+$spacing-large: 1rem * $line-height-main;
+$spacing-larger: 2rem * $line-height-main;
+
+/* ==========================================================================
+   Breakpoints
+*/
+
+$break-md: 40em;
+$break-lg: 55em;
+$break-huge: 62.5em;
+
+/* ==========================================================================
+   Colors
+*/
+
+// Main colors
+$color-main: red; // TODO
+$color-alt: #d2e8f7; // light blue
+$color-mono: #333; // TODO // for shades of grey or text?
+$color-background: #1024be; // dark blue
+
+$color-links: #2B90D9; // light blue
+
+/* ==========================================================================
+   Fonts
+*/
+
+// Set web fonts:
+$font-web-main: 'Libre Franklin';
+
+// Set fallbacks:
+$font-main-fallback: Helvetica, sans-serif;
+
+// Set font stack
+$font-stack-main: $font-web-main, $font-main-fallback;
+
+// Web font loading, if using web fonts
+$font-display: swap; // or `optional`

@@ -1,0 +1,26 @@
+// Mixins!
+
+// Web fonts mixins with defaults
+@mixin webfont($style: normal, $weight: normal, $family: $font-web-main, $display: $font-display) {
+    font-family: $family;
+    font-display: $display;
+    font-style: $style;
+    font-weight: $weight;
+}
+
+/* Conditions */
+
+// Default grid supports
+@mixin supports-grid() {
+  @supports(display: grid) {
+    @content;
+  }
+}
+
+/* Breakpoints */
+
+@mixin breakpoint($break) {
+  @media (min-width: $break) {
+    @content;
+  }
+}

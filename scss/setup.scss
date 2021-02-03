@@ -1,0 +1,290 @@
+
+/* ==========================================================================
+  Basic HTML reset and normalization
+*/
+
+/* Box model */
+body,
+blockquote,
+dd,
+dl,
+fieldset,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+p,
+pre,
+ul {
+  margin: 0;
+}
+
+button,
+blockquote,
+fieldset,
+input,
+legend,
+ol,
+ul {
+  padding: 0;
+}
+
+/* Prevent table spacing */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Reset typography for forms and headings. */
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+select,
+textarea {
+   font-size: inherit;
+   font-weight: inherit;
+ }
+
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font-family: inherit;
+  background-color: transparent;
+  line-height: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+cite {
+  font-style: inherit;
+}
+
+/* Reset lists and quotes */
+ol, ul {
+  list-style: none;
+}
+
+q {
+  quotes: none;
+}
+
+/* Reset form and iframe borders */
+button,
+iframe,
+input,
+fieldset {
+  border: 0;
+}
+
+/* ==========================================================================
+   #Normalize
+   - #cross-browser
+   - #internet-explorer
+*/
+
+/**
+ * Cross-browser normalization #cross-browser
+ */
+
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ * The bolder property goes one weight up from the parent, so that you can bold
+ * your already-bold text.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0;
+  overflow: visible; /* 2 */
+}
+
+/* Internet Explorer #internet-explorer */
+
+/**
+ * Add the correct display for HTML5 elements in IE 9-10.
+ * 1. Add the correct display in Edge, IE, and Firefox 46-48 (2016)
+ * 2. Add the correct display in IE 9-11.
+ * `details` functionality is not compatible with IE or Edge (as of May 2018)
+ */
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figure,
+figcaption,
+menu,
+details, /* 1 */
+main /* 2 */
+{
+  display: block;
+}
+
+/**
+ * Hide the overflow in IE.
+ * SVG images resized with CSS will leave empty canvas space otherwise.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/**
+ * 1. Remove the default vertical scrollbar in IE.
+ * 2. Change the resize direction on textareas in all browsers (opinionated).
+ */
+
+textarea {
+	overflow: auto; /* 1 */
+	resize: vertical; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input /* 1 */
+{
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select /* 1 */
+{
+  text-transform: none;
+}
+
+/* IE 9 */
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+
+mark {
+  background-color: #f00; /* Yellow */
+ 	color: #000; /* Black */
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+video,
+canvas,
+progress {
+  display: inline-block;
+}
+
+/* IE 10 */
+
+/**
+ * Remove the tapping delay on clickable elements (opinionated).
+ * 1. Remove the tapping delay in IE 10.
+ */
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+	-ms-touch-action: manipulation; /* 1 */
+	touch-action: manipulation;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ * @link https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
+ */
+
+img {
+  border-style: none;
+}
+
+/* Remove the gray background on active links in IE 10 */
+a {
+  background-color: transparent;
+}
+
+/* Firefox */
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+}
